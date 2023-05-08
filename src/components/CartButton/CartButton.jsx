@@ -10,8 +10,11 @@ function CartButton() {
       className="cart__button">
 
       <AiOutlineShoppingCart />
-      
-      <span className="cart-status">1</span>
+      <span
+        className="cart-status">
+          1
+      </span>
+
     </button>
   );
 }
