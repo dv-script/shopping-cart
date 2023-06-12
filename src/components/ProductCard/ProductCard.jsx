@@ -9,7 +9,6 @@ function ProductCard({ data }) {
 
   const { title, thumbnail, price } = data;
 
-
   return (
     <section className="product-card">
       
@@ -31,7 +30,6 @@ function ProductCard({ data }) {
 }
 
 export default ProductCard;
-
 
 ProductCard.propTypes = {
   data: propTypes.shape({}),
