@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+
+import "./Products.css";
 
 import ProductCard from "../ProductCard/ProductCard";
 import Loading from "../Loading/Loading";
 
+import AppContext from "../../context/AppContext";
 import fetchProducts from "../../api/fetchProducts";
-import "./Products.css";
+
 
 function Products() {
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-
+  const {products, setProducts, loading, setLoading} = useContext(AppContext);
 
   useEffect( () => {
 
@@ -27,7 +27,7 @@ function Products() {
     (loading && <Loading />) || (
 
       <section className="products container">
-        {products.map((product) => <ProductCard key={product} data={product} />)}
+        {products.map((product) => <ProductCard key={product.id} data={product} />)}
       </section>
     
     )
